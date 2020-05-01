@@ -1,0 +1,52 @@
+<div class="mainContainer">
+  <h5>Latest episodes</h5>
+  <br>
+  <div class="contentContainer" [ngSwitch]="currentEpisodeState">
+    <div *ngSwitchCase="states.loading" class="loading">
+      <preloader></preloader>
+
+    </div>
+    <div *ngSwitchCase="states.loaded" class="content" #episodeCont (wheel)="scroll(episodeCont,$event)">
+      <div class="imgContainer" *ngFor="let episode of episodes">
+        <a (click)="changeEpisodePage(episode)">
+          <img class="z-depth-2" src="data:image/png;base64,{{episode.poster}}">
+          <p>{{episode.title}}</p>
+        </a>
+      </div>
+    </div>
+    <div *ngSwitchCase="states.error">
+      <div class="errorMessage">
+
+        <i class="material-icons large">priority_high</i>
+        <a class="btn  pink lighten-3" (click)="getLatestEpisodes()">Retry</a>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <h5>Latest Animes</h5>
+  <br>
+
+  <div class="contentContainer" [ngSwitch]="currentAnimeState">
+    <div *ngSwitchCase="states.loading" class="loading">
+      <preloader></preloader>
+    </div>
+    <div *ngSwitchCase="states.loaded" class="content" #animeCont (wheel)="scroll(animeCont,$event)">
+
+      <div class="imgContainer" *ngFor="let anime of animes">
+        <a (click)="changeAnimePage(anime)">
+          <img class="z-depth-2" src="data:image/png;base64,{{anime.poster}}">
+          <p>{{anime.title}}</p>
+        </a>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="states.error">
+      <div class="errorMessage">
+
+        <i class="material-icons large">priority_high</i>
+        <a class="btn  pink lighten-3" (click)="getLatestAnimes()">Retry</a>
+      </div>
+    </div>
+  </div>
+</div>

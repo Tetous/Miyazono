@@ -1,0 +1,87 @@
+<h5>Tv Shows</h5>
+<div class="contentContainer" [ngSwitch]="currentState.tvShowsState">
+  <div *ngSwitchCase="states.loading" class="loading">
+    <preloader></preloader>
+  </div>
+  <div *ngSwitchCase="states.error">
+    <div class="errorMessage">
+
+      <i class="material-icons large">priority_high</i>
+      <a class="btn  pink lighten-3"  >Retry</a>
+    </div>
+  </div>
+  <div class="content" *ngSwitchCase="states.loaded"  #showsDiv (wheel)="scroll(showsDiv,$event)">
+    <div class="imgContainer" *ngFor="let tvShow of tvShows">
+      <a (click)="changeAnimePage(tvShow)">
+        <img class="z-depth-2" src="data:image/png;base64,{{tvShow.poster}}">
+        <p>{{tvShow.title}}</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<h5>Movies</h5>
+<div class="contentContainer" [ngSwitch]="currentState.movieState">
+  <div *ngSwitchCase="states.loading" class="loading">
+    <preloader></preloader>
+  </div>
+  <div *ngSwitchCase="states.error">
+    <div class="errorMessage">
+
+      <i class="material-icons large">priority_high</i>
+      <a class="btn  pink lighten-3"  >Retry</a>
+    </div>
+  </div>
+  <div class="content" *ngSwitchCase="states.loaded" #moviesDiv (wheel)="scroll(moviesDiv,$event)">
+    <div class="imgContainer" *ngFor="let movie of movies">
+      <a (click)="changeAnimePage(movie)">
+        <img class="z-depth-2" src="data:image/png;base64,{{movie.poster}}">
+        <p>{{movie.title}}</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<h5>OVA</h5>
+<div class="contentContainer" [ngSwitch]="currentState.ovaState">
+  <div *ngSwitchCase="states.loading" class="loading">
+    <preloader></preloader>
+  </div>
+  <div *ngSwitchCase="states.error">
+    <div class="errorMessage">
+
+      <i class="material-icons large">priority_high</i>
+      <a class="btn  pink lighten-3"  >Retry</a>
+    </div>
+  </div>
+  <div class="content" *ngSwitchCase="states.loaded" #ovasDiv (wheel)="scroll(ovasDiv,$event)">
+    <div class="imgContainer" *ngFor="let ova of ovas">
+      <a (click)="changeAnimePage(ova)">
+        <img class="z-depth-2" src="data:image/png;base64,{{ova.poster}}">
+        <p>{{ova.title}}</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<h5>Specials</h5>
+<div class="contentContainer" [ngSwitch]="currentState.specialsState">
+  <div *ngSwitchCase="states.loading" class="loading">
+    <preloader></preloader>
+  </div>
+  <div *ngSwitchCase="states.error">
+    <div class="errorMessage">
+
+      <i class="material-icons large">priority_high</i>
+      <a class="btn  pink lighten-3"  >Retry</a>
+    </div>
+  </div>
+  <div class="content" *ngSwitchCase="states.loaded" #specialsDiv (wheel)="scroll(specialsDiv,$event)">
+    <div class="imgContainer" *ngFor="let special of specials">
+      <a (click)="changeAnimePage(special)">
+        <img class="z-depth-2" src="data:image/png;base64,{{special.poster}}">
+        <p>{{special.title}}</p>
+      </a>
+    </div>
+  </div>
+</div>

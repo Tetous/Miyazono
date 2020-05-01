@@ -1,0 +1,65 @@
+.videoContainer {
+  margin-top: 50px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background-color: black;
+  padding-top: 56.25%;
+}
+
+.videoPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.animeContainer {
+  margin-top: 100px;
+}
+
+.flexBtn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.flexBtn a {
+  background-color: #3b3b3b;
+  width: 120px;
+  margin: 10px;
+}
+
+.collection-item {
+  background-color: rgba(14, 13, 13, 0.274) !important;
+  border-bottom: none !important;
+  margin-bottom: 10px !important;
+  color: white;
+}
+
+.current {
+  background-color: #ffa6c5a1 !important;
+}
+
+.collection {
+  border: none;
+  height: 30vh;
+  overflow-y: auto;
+}
+
+h5 {
+  letter-spacing: 2px;
+
+}
+
+@media only screen and (max-width: 993px) {
+  h5 {
+    font-size: 1.25rem;
+  }
+
+}

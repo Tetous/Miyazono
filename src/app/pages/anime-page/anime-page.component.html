@@ -1,0 +1,47 @@
+<div class="container animeContainer">
+  <div class="row" [ngSwitch]="currentState">
+    <div *ngSwitchCase="states.loading">
+      <div class="col s12" class="loadingContainer">
+        <preloader class="loading"></preloader>
+      </div>
+    </div>
+    <div class="loaded" *ngSwitchCase="states.loaded">
+      <div class="col s12 m4 xl3" id="imageContainer">
+        <img class="z-depth-2 imagePoster" src="data:image/png;base64,{{animeInfo.poster}}">
+      </div>
+      <div class="col s12 m8 xl9">
+        <div class="card">
+          <div class="card-content">
+            <h5 id="animeName">{{animeInfo.title}}</h5>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <p id="animeInfo">{{animeInfo.synopsis}}</p>
+          </div>
+        </div>
+        <ul class="collection" id="episodeContainer">
+          <a *ngFor="let episode of animeInfo.episodes" (click)="changeEpisodePage(episode)">
+            <li class="collection-item clickable">
+              {{episode.episode != undefined ? "Episode " + episode.episode : episode.nextEpisodeDate != null ? "Next episode: "+episode.nextEpisodeDate : "Next episode: finished"}}
+            </li>
+          </a>
+        </ul>
+      </div>
+    </div>
+    <div *ngSwitchCase="states.error">
+      <div class="row">
+        <div class="col s12 l6 offset-l3">
+          <div class="card">
+            <div class="card-content">
+              <div class="errorMessage">
+                <i class="material-icons large">priority_high</i>
+                <a class="btn  pink lighten-3" (click)="getEpisodes()">Retry</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+.contentContainer {
+  position: relative;
+  overflow-y: hidden;
+  background-color: #0e0d0da1;
+  height: 192px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.content {
+  overflow-y: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px;
+
+}
+
+h5 {
+  left: 50px;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.imgContainer {
+  cursor: pointer;
+  position: relative;
+  width: 200px;
+  margin: 20px;
+}
+
+img {
+  border-radius: 5%;
+  width: 200px;
+  height: 125px;
+  border-radius: 5%;
+
+  object-fit: cover;
+
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+
+  position: absolute;
+  white-space: nowrap;
+  width: 100%;
+  margin: 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 10px;
+  font-weight: 500;
+  bottom: 0px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.658);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+}
+
+
+.errorMessage {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.errorMessage .btn {
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.errorMessage i {
+  position: relative;
+  width: 60px;
+  font-size: 2.5rem;
+  padding-top: 13px;
+  height: 60px;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #242424a1;
+  color: #575757a1;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.loading {
+  position: relative;
+  width: 100vw;
+}

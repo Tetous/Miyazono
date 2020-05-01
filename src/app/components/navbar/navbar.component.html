@@ -1,0 +1,25 @@
+<nav class="z-depth-0">
+  <div class="nav-wrapper container">
+    <a routerLink="/" class="brand-logo" [class.hideNav]="isMain">Miyazono</a>
+    <a data-target="mobile-nav" class="mobileBtn clickable" (click)="openSideNav()"><i
+        class="material-icons">menu</i></a>
+  </div>
+</nav>
+<ul class="sidenav" id="mobile-nav">
+  <li>
+    <search-bar></search-bar>
+  </li>
+  <div class="filler"></div>
+  <li [routerLinkActiveOptions]="{ exact: true }" class="clickable" routerLinkActive="selectedTopic"><a
+      routerLink="/"><i class="material-icons white-text">home</i>Home</a></li>
+  <li routerLinkActive="selectedTopic" class="clickable"><a routerLink="/morecontent"><i
+        class="material-icons white-text">movie</i>More Content</a></li>
+  <li routerLinkActive="selectedTopic" class="clickable"><a routerLink="/about"><i
+        class="material-icons white-text">help_outline</i>About</a></li>
+</ul>
+
+<div [class.coloredDiv]="isMain" [class.coloredDivNav]="!isMain" class="z-depth-3 ">
+  <div [class.titleContainer]="isMain" [class.hideNav]="!isMain" class="navBarMainClass">
+    <h4 routerLink="/">Miyazono</h4>
+  </div>
+</div>
