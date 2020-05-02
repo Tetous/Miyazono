@@ -1,4 +1,5 @@
 <h5>Tv Shows</h5>
+<br>
 <div class="contentContainer" [ngSwitch]="currentState.tvShowsState">
   <div *ngSwitchCase="states.loading" class="loading">
     <preloader></preloader>
@@ -21,6 +22,7 @@
 </div>
 
 <h5>Movies</h5>
+<br>
 <div class="contentContainer" [ngSwitch]="currentState.movieState">
   <div *ngSwitchCase="states.loading" class="loading">
     <preloader></preloader>
@@ -43,6 +45,7 @@
 </div>
 
 <h5>OVA</h5>
+<br>
 <div class="contentContainer" [ngSwitch]="currentState.ovaState">
   <div *ngSwitchCase="states.loading" class="loading">
     <preloader></preloader>
@@ -65,6 +68,7 @@
 </div>
 
 <h5>Specials</h5>
+<br>
 <div class="contentContainer" [ngSwitch]="currentState.specialsState">
   <div *ngSwitchCase="states.loading" class="loading">
     <preloader></preloader>
