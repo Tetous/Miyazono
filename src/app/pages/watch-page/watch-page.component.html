@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col s12 xl8 offset-xl2">
             <ul class="collection" id="episodeContainer">
-                <a *ngFor="let otherEpisode of episode.otherEpisodes" (click)="changeEpisodePage(episode)">
+                <a *ngFor="let otherEpisode of episode.otherEpisodes" (click)="changeEpisodePage(otherEpisode)">
                   <li class="collection-item clickable" [class.current]="otherEpisode.episode == episode.number">
                     {{otherEpisode.episode != undefined ? "Episode " + otherEpisode.episode : otherEpisode.nextEpisodeDate != null ? "Next episode: "+otherEpisode.nextEpisodeDate : "Next episode: finished"}}
                   </li>

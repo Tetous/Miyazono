@@ -75,14 +75,8 @@ export class WatchPage implements OnInit {
     
   }
   changeEpisodePage(episode) {
-    this.animeService.getAnimeServers(episode.id).subscribe(server => {
-      this.animeData.episodeData = {
-        title: this.episode.title,
-        id:this.episode.animeId,
-        otherEpisodes:this.episode.otherEpisodes,
-        number: episode.episode,
-        servers: server["servers"]
-      }
+    console.log(episode)
+   
       let extras: NavigationExtras = {
         queryParams: {
           "episodeId": episode.id,
@@ -93,7 +87,6 @@ export class WatchPage implements OnInit {
         }
       }
       this.router.navigate(["/watch"], extras)
-    })
 
   }
   scroll(element:HTMLElement,event){
