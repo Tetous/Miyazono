@@ -37,11 +37,11 @@ export class AnimePage implements OnInit {
   }
 
   getEpisodes() {
+    this.currentState = this.states.loading
     this.route.queryParams.subscribe(params => {
       let animeName = params.animeName
       let id = params.animeId
       this.animeService.getSearchResult(animeName).subscribe(results => {
-        console.log(results)
         let current = 0
         while (results["search"][current].id != id) {
           current++;
@@ -49,7 +49,6 @@ export class AnimePage implements OnInit {
         let data = results["search"][current]
         this.animeInfo = data
         this.currentState = this.states.loaded
-        console.log(this.animeInfo)
 
       }, () => {
         this.currentState = this.states.error
@@ -59,7 +58,6 @@ export class AnimePage implements OnInit {
   }
 
   changeEpisodePage(episode) {
-    console.log(episode)
     this.animeService.getAnimeServers(episode.id).subscribe(server => {
       this.animeData.episodeData = {
         title: this.animeInfo.title,

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
@@ -50,9 +50,10 @@ export class AnimeService {
     }
 
     getFromRest(url, extra?) {
-        let fullUrl = extra != undefined ? `/api/v1/${url}/${extra}` : `/api/v1/${url}`
+        const headers = new HttpHeaders().set('Access-Control-Allow-Origin','*')
+        let fullUrl = extra != undefined ? `https://animeflv.chrismichael.now.sh/api/v1/${url}/${extra}` : `https://animeflv.chrismichael.now.sh/api/v1/${url}`
 
-        return this.http.get(fullUrl);
+        return this.http.get(fullUrl,{headers});
 
 
     }

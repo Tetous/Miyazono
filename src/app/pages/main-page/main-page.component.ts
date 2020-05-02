@@ -71,9 +71,10 @@ export class MainPage implements OnInit {
   }
 
   getLatestEpisodes() {
+    this.currentEpisodeState = this.states.loading
+
     this.animeService.getLatestEpisodes().subscribe((data) => {
 
-      console.log(data)
 
       this.episodes = data["episodes"]
       this.animeData.latestEpisodes = this.episodes
@@ -86,14 +87,15 @@ export class MainPage implements OnInit {
   }
 
   getLatestAnimes() {
+    this.currentAnimeState = this.states.loading
+
     this.animeService.getLatestAnimes().subscribe((data) => {
-      console.log(data)
       this.animes = data["animes"]
       this.animeData.latestAnimes = this.animes
       this.currentAnimeState = this.states.loaded
 
     },()=>{
-      this.currentEpisodeState = this.states.error
+      this.currentAnimeState = this.states.error
 
     })
   }
