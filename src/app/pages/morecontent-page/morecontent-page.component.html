@@ -1,4 +1,5 @@
 <h5>Tv Shows</h5>
+<br>
 <div class="contentContainer" [ngSwitch]="currentState.tvShowsState">
   <div *ngSwitchCase="states.loading" class="loading">
     <preloader></preloader>
@@ -7,7 +8,7 @@
     <div class="errorMessage">
 
       <i class="material-icons large">priority_high</i>
-      <a class="btn  pink lighten-3"  >Retry</a>
+      <a class="btn  pink lighten-3"  (click)="getTvShows()">Retry</a>
     </div>
   </div>
   <div class="content" *ngSwitchCase="states.loaded"  #showsDiv (wheel)="scroll(showsDiv,$event)">
@@ -21,6 +22,7 @@
 </div>
 
 <h5>Movies</h5>
+<br>
 <div class="contentContainer" [ngSwitch]="currentState.movieState">
   <div *ngSwitchCase="states.loading" class="loading">
     <preloader></preloader>
@@ -29,7 +31,7 @@
     <div class="errorMessage">
 
       <i class="material-icons large">priority_high</i>
-      <a class="btn  pink lighten-3"  >Retry</a>
+      <a class="btn  pink lighten-3"  (click)="getMovies()">Retry</a>
     </div>
   </div>
   <div class="content" *ngSwitchCase="states.loaded" #moviesDiv (wheel)="scroll(moviesDiv,$event)">
@@ -43,6 +45,7 @@
 </div>
 
 <h5>OVA</h5>
+<br>
 <div class="contentContainer" [ngSwitch]="currentState.ovaState">
   <div *ngSwitchCase="states.loading" class="loading">
     <preloader></preloader>
@@ -51,7 +54,7 @@
     <div class="errorMessage">
 
       <i class="material-icons large">priority_high</i>
-      <a class="btn  pink lighten-3"  >Retry</a>
+      <a class="btn  pink lighten-3" (click)="getOvas()" >Retry</a>
     </div>
   </div>
   <div class="content" *ngSwitchCase="states.loaded" #ovasDiv (wheel)="scroll(ovasDiv,$event)">
@@ -65,6 +68,7 @@
 </div>
 
 <h5>Specials</h5>
+<br>
 <div class="contentContainer" [ngSwitch]="currentState.specialsState">
   <div *ngSwitchCase="states.loading" class="loading">
     <preloader></preloader>
@@ -73,7 +77,7 @@
     <div class="errorMessage">
 
       <i class="material-icons large">priority_high</i>
-      <a class="btn  pink lighten-3"  >Retry</a>
+      <a class="btn  pink lighten-3"  (click)="getSpecials()">Retry</a>
     </div>
   </div>
   <div class="content" *ngSwitchCase="states.loaded" #specialsDiv (wheel)="scroll(specialsDiv,$event)">

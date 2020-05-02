@@ -15,7 +15,6 @@ export class NavbarComponent implements OnInit {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         let route = val.url.split("?").shift();
-        console.log(val)
         if (route != '/' && route != '/search' && route != '/morecontent' && route != '/about') {
           this.isMain = false
         } else {

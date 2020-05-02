@@ -66,9 +66,9 @@ export class MoreContentPage implements OnInit {
   }
 
   getTvShows() {
+    this.currentState.tvShowsState = this.states.loading
 
     this.animeService.getTv("default", 1).subscribe(shows => {
-      console.log(shows)
       this.tvShows = shows["tv"]
       this.animeData.latestAnimes = this.tvShows
       this.currentState.tvShowsState = this.states.loaded
@@ -80,9 +80,9 @@ export class MoreContentPage implements OnInit {
   }
 
   getMovies() {
+    this.currentState.movieState = this.states.loading
 
     this.animeService.getMovies("default", 1).subscribe(movies => {
-      console.log(movies)
       this.movies = movies["movies"]
       this.animeData.latestMovies = this.movies
       this.currentState.movieState = this.states.loaded
@@ -94,9 +94,9 @@ export class MoreContentPage implements OnInit {
   }
 
   getOvas() {
+    this.currentState.ovaState = this.states.loading
 
     this.animeService.getOva("default", 1).subscribe(ovas => {
-      console.log(ovas)
       this.ovas = ovas["ova"]
       this.animeData.latestOvas = this.ovas
 
@@ -109,9 +109,9 @@ export class MoreContentPage implements OnInit {
   }
 
   getSpecials() {
+    this.currentState.specialsState = this.states.loading
 
     this.animeService.getSpecial("default", 1).subscribe(specials => {
-      console.log(specials)
       this.specials = specials["special"]
       this.animeData.latestSpecials = this.specials
       this.currentState.specialsState = this.states.loaded

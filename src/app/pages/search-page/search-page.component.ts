@@ -27,14 +27,10 @@ export class SearchPage implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.currentState = this.states.loading
       let search = params.search
-      console.log(params)
       this.animeService.getSearchResult(search).subscribe(results => {
-      console.log(results)
       this.searchResults = []
         results["search"].forEach(element => {
-          console.log(element)
           this.searchResults.push(element)
-          console.log(this.searchResults)
         });
         this.currentState = this.states.loaded
       })

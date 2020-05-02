@@ -34,12 +34,10 @@ export class WatchPage implements OnInit {
       route.queryParams.subscribe(params => {
         let id = params.episodeId
         animeService.getServers(id).subscribe(servers => {
-          console.log(servers)
           this.episode.servers = servers["servers"];
           this.episode.title = params.episodeTitle
           this.episode.number = params.episodeNumber
           this.episode.animeId = params.animeId
-          console.log(this.episode.servers[0].code)
           this.getEpisodes();
           this.changeUrl(this.episode.servers[0].code)
 
@@ -48,10 +46,8 @@ export class WatchPage implements OnInit {
       })
 
     } else {
-      console.log(animeData)
       this.episode = animeData.episodeData
     
-      console.log(this.episode.servers[0])
       this.changeUrl(this.episode.servers[0].code)
     }
 
@@ -59,8 +55,8 @@ export class WatchPage implements OnInit {
   }
 
   getEpisodes(){
+    this.currentState = this.states.loading
     this.animeService.getSearchResult(this.episode.title).subscribe(results => {
-      console.log(results)
       let current = 0
       while (results["search"][current].id != this.episode.animeId) {
         current++;
@@ -68,7 +64,6 @@ export class WatchPage implements OnInit {
       let data = results["search"][current].episodes
       this.episode.otherEpisodes = data
       this.currentState = this.states.loaded
-      console.log(this.episode.otherEpisodes)
 
     }, () => {
       this.currentState = this.states.error
@@ -80,7 +75,6 @@ export class WatchPage implements OnInit {
     
   }
   changeEpisodePage(episode) {
-    console.log(episode)
     this.animeService.getAnimeServers(episode.id).subscribe(server => {
       this.animeData.episodeData = {
         title: this.episode.title,
