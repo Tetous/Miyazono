@@ -48,7 +48,7 @@ export class AnimePage implements OnInit {
         }
         let data = results["search"][current]
         this.animeInfo = data
-        this.currentState = this.states.loaded
+        this.currentState =this.animeInfo.episodes.length != 0 ?  this.states.loaded: this.states.error
 
       }, () => {
         this.currentState = this.states.error

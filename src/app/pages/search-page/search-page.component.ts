@@ -1,7 +1,7 @@
 import { AnimeData } from './../../services/animeData.service';
 import { AnimeService } from './../../services/anime.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router,NavigationExtras } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'search-page',
@@ -17,7 +17,7 @@ export class SearchPage implements OnInit {
 
   }
   currentState = this.states.loading
-  constructor(private animeService: AnimeService, private route: ActivatedRoute, private router: Router,private animeData:AnimeData) {
+  constructor(private animeService: AnimeService, private route: ActivatedRoute, private router: Router, private animeData: AnimeData) {
 
 
 
@@ -28,17 +28,15 @@ export class SearchPage implements OnInit {
       this.currentState = this.states.loading
       let search = params.search
       this.animeService.getSearchResult(search).subscribe(results => {
-      this.searchResults = []
-        results["search"].forEach(element => {
-          this.searchResults.push(element)
-        });
-        this.currentState = this.states.loaded
+        this.searchResults = []
+        this.searchResults = results["search"]
+        this.currentState = this.searchResults.length != 0 ? this.states.loaded : this.states.error
       })
     })
   }
 
   changeAnimePage(anime) {
- 
+
     this.animeData.data = anime;
     let extras: NavigationExtras = {
       queryParams: {

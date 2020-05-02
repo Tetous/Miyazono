@@ -36,7 +36,7 @@ export class MoreContentPage implements OnInit {
       this.getTvShows();
     } else {
       this.tvShows = animeData.latestAnimes
-      this.currentState.tvShowsState = this.states.loaded
+      this.currentState.tvShowsState = this.tvShows.length != 0 ?  this.states.loaded: this.states.error
 
     }
     if (animeData.latestMovies == undefined) {
@@ -44,7 +44,7 @@ export class MoreContentPage implements OnInit {
       this.getMovies();
     } else {
       this.movies = animeData.latestMovies
-      this.currentState.movieState = this.states.loaded
+      this.currentState.movieState = this.movies.length != 0 ?  this.states.loaded: this.states.error
 
     }
     if (animeData.latestOvas == undefined) {
@@ -52,14 +52,14 @@ export class MoreContentPage implements OnInit {
       this.getOvas();
     } else {
       this.ovas = animeData.latestOvas
-      this.currentState.ovaState = this.states.loaded
+      this.currentState.ovaState = this.ovas.length != 0 ?  this.states.loaded: this.states.error
 
     }
     if (animeData.latestSpecials == undefined) {
       this.getSpecials();
     } else {
       this.specials = animeData.latestSpecials
-      this.currentState.specialsState = this.states.loaded
+      this.currentState.specialsState = this.specials.length != 0 ?  this.states.loaded: this.states.error
 
     }
 
