@@ -16,22 +16,32 @@ export class SearchPage implements OnInit {
     error: 2
 
   }
+  search
   currentState = this.states.loading
   constructor(private animeService: AnimeService, private route: ActivatedRoute, private router: Router, private animeData: AnimeData) {
 
 
 
   }
-
+  scroll(element: HTMLElement, event) {
+    event.preventDefault()
+    let scrollValue = element.scrollLeft
+    let scrollAmount = event.deltaY < 0 ? scrollValue + 150 : scrollValue - 150
+    element.scroll({ left: scrollAmount })
+  }
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      this.currentState = this.states.loading
-      let search = params.search
-      this.animeService.getSearchResult(search).subscribe(results => {
-        this.searchResults = []
-        this.searchResults = results["search"]
-        this.currentState = this.searchResults.length != 0 ? this.states.loaded : this.states.error
-      })
+      this.search = params.search
+      this.searchAnime() 
+    })
+  }
+
+  searchAnime() {
+    this.currentState = this.states.loading
+    this.animeService.getSearchResult(this.search).subscribe(results => {
+      this.searchResults = []
+      this.searchResults = results["search"]
+      this.currentState = this.searchResults.length != 0 ? this.states.loaded : this.states.error
     })
   }
 

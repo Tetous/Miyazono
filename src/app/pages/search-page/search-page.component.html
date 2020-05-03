@@ -1,64 +1,23 @@
 <div class="mainContainer">
   <h5>Search results</h5>
   <br>
-  <div class="contnetContainer" [ngSwitch]="currentState">
+  <div class="contentContainer" [ngSwitch]="currentState">
     <div class="loading" *ngSwitchCase="states.loading">
-      <div class="preloader-wrapper big active loader center">
-        <div class="spinner-layer spinner-blue">
-          <div class="circle-clipper left">
-            <div class="circle"></div>
-          </div>
-          <div class="gap-patch">
-            <div class="circle"></div>
-          </div>
-          <div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
-        </div>
-
-        <div class="spinner-layer spinner-red">
-          <div class="circle-clipper left">
-            <div class="circle"></div>
-          </div>
-          <div class="gap-patch">
-            <div class="circle"></div>
-          </div>
-          <div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
-        </div>
-
-        <div class="spinner-layer spinner-yellow">
-          <div class="circle-clipper left">
-            <div class="circle"></div>
-          </div>
-          <div class="gap-patch">
-            <div class="circle"></div>
-          </div>
-          <div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
-        </div>
-
-        <div class="spinner-layer spinner-green">
-          <div class="circle-clipper left">
-            <div class="circle"></div>
-          </div>
-          <div class="gap-patch">
-            <div class="circle"></div>
-          </div>
-          <div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
-        </div>
-      </div>
+      <preloader></preloader>
     </div>
-    <div class="content" *ngSwitchCase="states.loaded">
-      <div class="imgContainer" *ngFor="let result of searchResults">
+    <div class="content" *ngSwitchCase="states.loaded" #searchCont (wheel)="scroll(searchCont,$event)">
+      <div class="imgContainer" *ngFor="let result of searchResults" >
         <a (click)="changeAnimePage(result)">
           <img class="z-depth-2" src="data:image/png;base64,{{result.poster}}">
           <p>{{result.title}}</p>
         </a>
+      </div>
+    </div>
+    <div *ngSwitchCase="states.error">
+      <div class="errorMessage">
+
+        <i class="material-icons large">priority_high</i>
+        <a class="btn  pink lighten-3" (click)="searchAnime()">Retry</a>
       </div>
     </div>
   </div>
