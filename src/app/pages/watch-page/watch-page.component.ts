@@ -81,9 +81,8 @@ export class WatchPage implements OnInit {
   }
   changeEpisodePage(episode) {
     this.currentState = this.states.loading
-
     this.currentEpisode = episode.episode
-
+    this.animeData.episodeData = undefined;
     let extras: NavigationExtras = {
       queryParams: {
         "episodeId": episode.id,
@@ -94,6 +93,7 @@ export class WatchPage implements OnInit {
       }
     }
     this.router.navigate(["/watch"], extras)
+
 
   }
   scroll(element: HTMLElement, event) {
