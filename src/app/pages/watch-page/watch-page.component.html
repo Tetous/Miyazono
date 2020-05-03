@@ -1,33 +1,48 @@
 <div class="container ">
-    <div class="row">
-        <div class="col s12 xl8 offset-xl2">
-            <div class="videoContainer">
-                <iframe class="videoPlayer"  sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" webkitallowfullscreen="true" mozallowfullscreen="true"
-                    allowfullscreen="true" id="source" [src]="url" frameborder="0"></iframe>
-            </div>
+  <div class="row">
+    <div class="col s12 xl8 offset-xl2">
+      <div class="videoContainer" [ngSwitch]="currentState">
+        <div class="loading" *ngSwitchCase="states.loading">
+          <preloader></preloader>
         </div>
-    </div>
-    <div class="row">
-        <div class="col s12 xl8 offset-xl2">
-            <h5 id="epTitle">{{episode.title}} {{"Episode " + episode.number}}</h5>
+        <div class="loaded" *ngSwitchCase="states.loaded">
+          <iframe class="videoPlayer"
+            sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
+            webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" id="source" [src]="url"
+            frameborder="0"></iframe>
         </div>
-    </div>
-    <div class="row">
-        <div class="col s12 xl8 offset-xl2">
-            <div class="flexBtn options" #serverDiv (wheel)="scroll(serverDiv,$event)">
-                <a class="btn" (click)="changeUrl(server.code)" *ngFor="let server of episode.servers" >{{server.title}}</a>
-            </div>
+        <div class="error" *ngSwitchCase="states.error">
+          <div class="errorMessage">
+
+            <i class="material-icons large">priority_high</i>
+            <a class="btn  pink lighten-3" (click)="getEpisodes()">Retry</a>
+          </div>
         </div>
+
+      </div>
     </div>
-    <div class="row">
-        <div class="col s12 xl8 offset-xl2">
-            <ul class="collection" id="episodeContainer">
-                <a *ngFor="let otherEpisode of episode.otherEpisodes" (click)="changeEpisodePage(otherEpisode)">
-                  <li class="collection-item clickable" [class.current]="otherEpisode.episode == episode.number">
-                    {{otherEpisode.episode != undefined ? "Episode " + otherEpisode.episode : otherEpisode.nextEpisodeDate != null ? "Next episode: "+otherEpisode.nextEpisodeDate : "Next episode: finished"}}
-                  </li>
-                </a>
-              </ul>
-        </div>
+  </div>
+  <div class="row">
+    <div class="col s12 xl8 offset-xl2">
+      <h5 id="epTitle">{{episode.title}} {{episode.title != "" ? "Episode " + currentEpisode : " "}}</h5>
     </div>
+  </div>
+  <div class="row">
+    <div class="col s12 xl8 offset-xl2">
+      <div class="flexBtn options" #serverDiv (wheel)="scroll(serverDiv,$event)">
+        <a class="btn" (click)="changeUrl(server.code)" *ngFor="let server of episode.servers">{{server.title}}</a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12 xl8 offset-xl2">
+      <ul class="collection" id="episodeContainer">
+        <a *ngFor="let otherEpisode of episode.otherEpisodes" (click)="changeEpisodePage(otherEpisode)">
+          <li class="collection-item clickable" [class.current]="currentEpisode == otherEpisode.episode">
+            {{otherEpisode.episode != undefined ? "Episode " + otherEpisode.episode : otherEpisode.nextEpisodeDate != null ? "Next episode: "+otherEpisode.nextEpisodeDate : "Next episode: finished"}}
+          </li>
+        </a>
+      </ul>
+    </div>
+  </div>
 </div>

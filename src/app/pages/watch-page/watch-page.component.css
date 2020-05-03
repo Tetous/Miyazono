@@ -51,7 +51,34 @@
   height: 30vh;
   overflow-y: auto;
 }
+.errorMessage {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 
+.errorMessage .btn {
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.errorMessage i {
+  position: relative;
+  width: 60px;
+  font-size: 2.5rem;
+  padding-top: 13px;
+  height: 60px;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #242424a1;
+  color: #575757a1;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
 h5 {
   letter-spacing: 2px;
 

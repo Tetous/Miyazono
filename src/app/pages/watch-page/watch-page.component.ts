@@ -24,12 +24,13 @@ export class WatchPage implements OnInit {
     error: 2
 
   }
+  currentEpisode;
   currentState = this.states.loading
   url: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl("");
 
 
   constructor(private animeData: AnimeData, private animeService: AnimeService, private route: ActivatedRoute, private sanitizer: DomSanitizer, private router:Router) {
-
+    console.log("changing")
     if (animeData.episodeData == undefined) {
       route.queryParams.subscribe(params => {
         let id = params.episodeId
@@ -37,6 +38,7 @@ export class WatchPage implements OnInit {
           this.episode.servers = servers["servers"];
           this.episode.title = params.episodeTitle
           this.episode.number = params.episodeNumber
+          this.currentEpisode=this.episode.number
           this.episode.animeId = params.animeId
           this.getEpisodes();
           this.changeUrl(this.episode.servers[0].code)
@@ -47,7 +49,8 @@ export class WatchPage implements OnInit {
 
     } else {
       this.episode = animeData.episodeData
-    
+      this.currentEpisode=this.episode.number
+      this.getEpisodes();
       this.changeUrl(this.episode.servers[0].code)
     }
 
@@ -58,7 +61,7 @@ export class WatchPage implements OnInit {
     this.currentState = this.states.loading
     this.animeService.getSearchResult(this.episode.title).subscribe(results => {
       let current = 0
-      while (results["search"][current].id != this.episode.animeId) {
+      while (results["search"][current].title != this.episode.title) {
         current++;
       }
       let data = results["search"][current].episodes
@@ -76,6 +79,9 @@ export class WatchPage implements OnInit {
   }
   changeEpisodePage(episode) {
     console.log(episode)
+    this.currentState = this.states.loading
+
+    this.currentEpisode=episode.episode
    
       let extras: NavigationExtras = {
         queryParams: {
