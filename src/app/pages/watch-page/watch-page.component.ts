@@ -32,25 +32,16 @@ export class WatchPage implements OnInit {
   constructor(private animeData: AnimeData, private animeService: AnimeService, private route: ActivatedRoute, private sanitizer: DomSanitizer, private router: Router) {
     console.log("changing")
     route.queryParams.subscribe(params => {
-      if (animeData.episodeData == undefined) {
-        let id = params.episodeId
-        animeService.getServers(id).subscribe(servers => {
-          this.episode.servers = servers["servers"];
-          this.episode.title = params.episodeTitle
-          this.episode.number = params.episodeNumber
-          this.currentEpisode = this.episode.number
-          this.episode.animeId = params.animeId
-          this.getEpisodes();
-          this.changeUrl(this.episode.servers[0].code)
-        })
-
-      } else {
-        this.episode = animeData.episodeData
+      let id = params.episodeId
+      animeService.getServers(id).subscribe(servers => {
+        this.episode.servers = servers["servers"];
+        this.episode.title = params.episodeTitle
+        this.episode.number = params.episodeNumber
         this.currentEpisode = this.episode.number
+        this.episode.animeId = params.animeId
         this.getEpisodes();
         this.changeUrl(this.episode.servers[0].code)
-      }
-
+      })
     })
 
   }

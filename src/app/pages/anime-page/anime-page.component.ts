@@ -58,13 +58,11 @@ export class AnimePage implements OnInit {
   }
 
   changeEpisodePage(episode) {
-    this.animeService.getAnimeServers(episode.id).subscribe(server => {
       this.animeData.episodeData = {
         title: this.animeInfo.title,
         id:this.animeInfo.id,
         otherEpisodes:this.animeInfo.episodes,
         number: episode.episode,
-        servers: server["servers"]
       }
       let extras: NavigationExtras = {
         queryParams: {
@@ -76,7 +74,6 @@ export class AnimePage implements OnInit {
         }
       }
       this.router.navigate(["/watch"], extras)
-    })
 
   }
 
