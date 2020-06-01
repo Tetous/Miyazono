@@ -31,21 +31,20 @@ export class WatchPage implements OnInit {
 
   constructor(private animeData: AnimeData, private animeService: AnimeService, private route: ActivatedRoute, private sanitizer: DomSanitizer, private router: Router) {
     console.log("changing")
-    if(animeData.episodeData != null){
-      
+    if (animeData.episodeData != null) {
+
     }
     route.queryParams.subscribe(params => {
-    console.log(params)
+      console.log(params)
 
       let id = params.episodeId
+
       this.episode.title = params.episodeTitle
       this.episode.number = params.episodeNumber
       this.currentEpisode = this.episode.number
-      animeService.getServers(id).subscribe(servers => {
-        this.episode.servers = servers["servers"];
-        this.getEpisodes();
-        this.changeUrl(this.episode.servers[0].code)
-      })
+      this.getEpisodes();
+
+
     })
 
   }
@@ -63,12 +62,19 @@ export class WatchPage implements OnInit {
       }
       let data = results["search"][current].episodes
       this.episode.otherEpisodes = data
+      let id = this.episode.otherEpisodes[this.episode.otherEpisodes.length - Number.parseInt(this.episode.number)].id
       this.currentState = this.states.loaded
+      this.animeService.getServers(id).subscribe(servers => {
+        this.episode.servers = servers["servers"];
+        this.changeUrl(this.episode.servers[0].code)
+      })
 
     }, () => {
       this.currentState = this.states.error
     })
   }
+
+
 
   changeUrl(url) {
     this.url = this.sanitizer.bypassSecurityTrustResourceUrl(url);
@@ -95,6 +101,9 @@ export class WatchPage implements OnInit {
     let scrollValue = element.scrollLeft
     let scrollAmount = event.deltaY < 0 ? scrollValue + 150 : scrollValue - 150
     element.scroll({ left: scrollAmount })
+  }
+  is_numeric(str) {
+    return /^\d+$/.test(str);
   }
   ngOnInit(): void {
 

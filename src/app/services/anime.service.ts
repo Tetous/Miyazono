@@ -52,7 +52,7 @@ export class AnimeService {
 
     getFromRest(url, extra?) {
         const headers = new HttpHeaders().set('Access-Control-Allow-Origin', '*')
-        let fullUrl = extra != undefined ? `https://animeflv.chrismichael.now.sh/api/v1/${url}/${extra}` : `https://animeflv.chrismichael.now.sh/api/v1/${url}`
+        let fullUrl = extra != undefined ? `https://miyazono-rest.glitch.me/api/v1/${url}/${extra}` : `https://miyazono-rest.glitch.me/api/v1/${url}`
 
         return this.http.get(fullUrl, { headers });
 
