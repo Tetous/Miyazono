@@ -11,7 +11,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 export class AnimePage implements OnInit {
 
   animeInfo = {
-    id:"",
+    id: "",
     title: "",
     poster: "",
     episodes: [],
@@ -48,7 +48,9 @@ export class AnimePage implements OnInit {
         }
         let data = results["search"][current]
         this.animeInfo = data
-        this.currentState =this.animeInfo.episodes.length != 0 ?  this.states.loaded: this.states.error
+        if (this.animeInfo.episodes == null)
+          this.animeInfo.episodes = []
+        this.currentState = this.animeInfo.episodes.length != null ? this.states.loaded : this.states.error
 
       }, () => {
         this.currentState = this.states.error
@@ -58,22 +60,22 @@ export class AnimePage implements OnInit {
   }
 
   changeEpisodePage(episode) {
-      this.animeData.episodeData = {
-        title: this.animeInfo.title,
-        id:this.animeInfo.id,
-        otherEpisodes:this.animeInfo.episodes,
-        number: episode.episode,
-      }
-      let extras: NavigationExtras = {
-        queryParams: {
-          "episodeId": episode.id,
-          "animeId":this.animeInfo.id,
-          "episodeTitle": this.animeInfo.title,
-          "episodeNumber": episode.episode,
+    this.animeData.episodeData = {
+      title: this.animeInfo.title,
+      id: this.animeInfo.id,
+      otherEpisodes: this.animeInfo.episodes,
+      number: episode.episode,
+    }
+    let extras: NavigationExtras = {
+      queryParams: {
+        "episodeId": episode.id,
+        "animeId": this.animeInfo.id,
+        "episodeTitle": this.animeInfo.title,
+        "episodeNumber": episode.episode,
 
-        }
       }
-      this.router.navigate(["/watch"], extras)
+    }
+    this.router.navigate(["/watch"], extras)
 
   }
 

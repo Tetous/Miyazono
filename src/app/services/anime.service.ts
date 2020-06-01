@@ -11,6 +11,7 @@ export class AnimeService {
     }
 
     getLatestEpisodes() {
+
         return this.getFromRest("LatestEpisodesAdded")
     }
 
@@ -36,24 +37,24 @@ export class AnimeService {
 
     }
 
-    getMovies(sortBy,page){
-        return this.getFromRest("Movies",sortBy+"/"+page);
+    getMovies(sortBy, page) {
+        return this.getFromRest("Movies", sortBy + "/" + page);
     }
-    getOva(sortBy,page){
-        return this.getFromRest("Ova",sortBy+"/"+page);
+    getOva(sortBy, page) {
+        return this.getFromRest("Ova", sortBy + "/" + page);
     }
-    getTv(sortBy,page){
-        return this.getFromRest("Tv",sortBy+"/"+page);
+    getTv(sortBy, page) {
+        return this.getFromRest("Tv", sortBy + "/" + page);
     }
-    getSpecial(sortBy,page){
-        return this.getFromRest("Special",sortBy+"/"+page);
+    getSpecial(sortBy, page) {
+        return this.getFromRest("Special", sortBy + "/" + page);
     }
 
     getFromRest(url, extra?) {
-        const headers = new HttpHeaders().set('Access-Control-Allow-Origin','*')
+        const headers = new HttpHeaders().set('Access-Control-Allow-Origin', '*')
         let fullUrl = extra != undefined ? `https://animeflv.chrismichael.now.sh/api/v1/${url}/${extra}` : `https://animeflv.chrismichael.now.sh/api/v1/${url}`
 
-        return this.http.get(fullUrl,{headers});
+        return this.http.get(fullUrl, { headers });
 
 
     }

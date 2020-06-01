@@ -74,6 +74,7 @@ export class MainPage implements OnInit {
     this.currentEpisodeState = this.states.loading
 
     this.animeService.getLatestEpisodes().subscribe((data) => {
+      console.log(data)
 
 
       this.episodes = data["episodes"]
@@ -90,6 +91,8 @@ export class MainPage implements OnInit {
     this.currentAnimeState = this.states.loading
 
     this.animeService.getLatestAnimes().subscribe((data) => {
+      console.log(data)
+
       this.animes = data["animes"]
       this.animeData.latestAnimes = this.animes
       this.currentAnimeState = this.animeData.latestAnimes.length != 0 ?  this.states.loaded: this.states.error

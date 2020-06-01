@@ -32,15 +32,22 @@ export class SearchPage implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.search = params.search
-      this.searchAnime() 
+      this.searchAnime()
     })
   }
 
   searchAnime() {
     this.currentState = this.states.loading
     this.animeService.getSearchResult(this.search).subscribe(results => {
+
       this.searchResults = []
+      
+
       this.searchResults = results["search"]
+      
+      if (this.searchResults == null)
+        this.searchResults = []
+
       this.currentState = this.searchResults.length != 0 ? this.states.loaded : this.states.error
     })
   }
