@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1592700114295,
+  "timestamp": 1592700279702,
   "index": "https://fmaldonado6.github.io/Miyazono/index.html",
   "assetGroups": [
     {
@@ -51,7 +51,7 @@
     "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-512x512.png": "2498e14fdf99e9e47bde6de687d642edfc85b8bc",
     "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-72x72.png": "bf3118fcc3834122104f94358f9d1ec3597946bc",
     "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-96x96.png": "d53f43e6d6e92b0dd4eebacee6aacb1a3a068cce",
-    "https://fmaldonado6.github.io/Miyazono/favicon.ico": "805790e7e9d2a1a078f5f67d310da8f14215136b",
+    "https://fmaldonado6.github.io/Miyazono/favicon.ico": "73fabeaa47eddf5c648b08050746dbe2259c5658",
     "https://fmaldonado6.github.io/Miyazono/index.html": "63cd4290060a659b562b9a773cab0714eab098d4",
     "https://fmaldonado6.github.io/Miyazono/main-es2015.4cc73c2aa1ed3fe30e4c.js": "e966c1647ad2239c20aecb47783de8db874e0b7a",
     "https://fmaldonado6.github.io/Miyazono/main-es5.4cc73c2aa1ed3fe30e4c.js": "923d0e8389b430aa3ea168738fb8748607c097a4",
