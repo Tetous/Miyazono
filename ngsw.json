@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1592700866460,
+  "timestamp": 1592706148800,
   "index": "https://fmaldonado6.github.io/Miyazono/index.html",
   "assetGroups": [
     {
@@ -18,7 +18,7 @@
         "https://fmaldonado6.github.io/Miyazono/runtime-es2015.0811dcefd377500b5b1a.js",
         "https://fmaldonado6.github.io/Miyazono/runtime-es5.0811dcefd377500b5b1a.js",
         "https://fmaldonado6.github.io/Miyazono/scripts.bfd84331b048c08a0126.js",
-        "https://fmaldonado6.github.io/Miyazono/styles.404907dad5cde19f5e5c.css"
+        "https://fmaldonado6.github.io/Miyazono/styles.c76b2c18635cf7017a40.css"
       ],
       "patterns": []
     },
@@ -52,7 +52,7 @@
     "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-72x72.png": "bf3118fcc3834122104f94358f9d1ec3597946bc",
     "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-96x96.png": "d53f43e6d6e92b0dd4eebacee6aacb1a3a068cce",
     "https://fmaldonado6.github.io/Miyazono/favicon.ico": "73fabeaa47eddf5c648b08050746dbe2259c5658",
-    "https://fmaldonado6.github.io/Miyazono/index.html": "d0f16491454ec325a0a4e635ed08fb5702034877",
+    "https://fmaldonado6.github.io/Miyazono/index.html": "d969a90c3bd5ba6579aa9ac99169a6f4b6a40a6f",
     "https://fmaldonado6.github.io/Miyazono/main-es2015.6288a52f7b5fef25a3de.js": "23efc98a4c688dd8896fc897a4eb5355e4edb1b1",
     "https://fmaldonado6.github.io/Miyazono/main-es5.6288a52f7b5fef25a3de.js": "e2821f03daecd891015926191cf021d7ea3319f9",
     "https://fmaldonado6.github.io/Miyazono/manifest.webmanifest": "edd8bebf7a294aa797ef936fc8d8e73137a264d2",
@@ -61,7 +61,7 @@
     "https://fmaldonado6.github.io/Miyazono/runtime-es2015.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "https://fmaldonado6.github.io/Miyazono/runtime-es5.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "https://fmaldonado6.github.io/Miyazono/scripts.bfd84331b048c08a0126.js": "d2ba08145c6ddbbe63efd331be6c8360db0c5f86",
-    "https://fmaldonado6.github.io/Miyazono/styles.404907dad5cde19f5e5c.css": "833902df8f296e9b92d67375b4f3d827e92d4e2d"
+    "https://fmaldonado6.github.io/Miyazono/styles.c76b2c18635cf7017a40.css": "0db4ada55aaab44915c990884dde27802b302ce0"
   },
   "navigationUrls": [
     {
