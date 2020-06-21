@@ -92,4 +92,35 @@
   width: 100vw;
 }
 
+.waves-effect {
+  display: block;
+}
 
+.collection-item:hover,.server-option:hover {
+  background-color: #f48fb170 !important;
+}
+
+.server-container{
+  padding: 20px;
+  overflow: auto !important;
+  max-height: 300px;
+}
+
+.server-option-container{
+width: 100%;
+}
+.server-option {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  border-radius: 7px;
+  color: #c2c2c2;
+  background-color: #3b3b3b;
+  margin-bottom: 20px;
+}
+.loadingContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}

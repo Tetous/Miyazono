@@ -1,11 +1,10 @@
 <nav class="z-depth-0">
   <div class="nav-wrapper container">
-    <a routerLink="/" class="brand-logo" [class.hideNav]="isMain">Miyazono</a>
-    <a data-target="mobile-nav" class="mobileBtn clickable" (click)="openSideNav()"><i
+    <a data-target="mobile-nav" class="mobileBtn clickable " (click)="openSideNav()"><i
         class="material-icons">menu</i></a>
   </div>
 </nav>
-<ul class="sidenav" id="mobile-nav">
+<ul class="sidenav sidenav-fixed" id="mobile-nav">
   <li>
     <search-bar></search-bar>
   </li>

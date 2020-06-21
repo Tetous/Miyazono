@@ -1,92 +1,36 @@
-.videoContainer {
-  margin-top: 100px;
-  position: relative;
-  overflow: hidden;
+.bg{
+  position: fixed;
   width: 100%;
-  background-color: black;
-  padding-top: 56.25%;
+  height: 100%;
+  background-color: black !important;
 }
 
-.videoPlayer {
+.back-btn{
+  color: white !important;
+  z-index: 10;
+  position: absolute;
+  margin: 20px;
+  font-size: 50px;
+}
+
+.video-container {
+  width: 100vw; 
+  height: 56.25vw; /* height:width ratio = 9/16 = .5625  */
+  background: pink;
+  max-height: 100vh;
+  max-width: 177.78vh; /* 16/9 = 1.778 */
+  margin: auto;
+  position: absolute;
+  top:0;bottom:0; /* vertical center */
+  left:0;right:0;
+}
+
+iframe {
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
   width: 100%;
   height: 100%;
-
-}
-
-.animeContainer {
-  margin-top: 100px;
-}
-
-.flexBtn {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-}
-
-.flexBtn a {
-  background-color: #3b3b3b;
-  width: 120px;
-  margin: 10px;
-}
-
-.collection-item {
-  background-color: rgba(14, 13, 13, 0.274) !important;
-  border-bottom: none !important;
-  margin-bottom: 10px !important;
-  color: white;
-}
-
-.current {
-  background-color: #ffa6c5a1 !important;
-}
-
-.collection {
   border: none;
-  height: 30vh;
-  overflow-y: auto;
-}
-.errorMessage {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.errorMessage .btn {
-  border-radius: 15px;
-  margin-top: 10px;
-}
-
-.errorMessage i {
-  position: relative;
-  width: 60px;
-  font-size: 2.5rem;
-  padding-top: 13px;
-  height: 60px;
-  text-align: center;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #242424a1;
-  color: #575757a1;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-h5 {
-  letter-spacing: 2px;
-
-}
-
-@media only screen and (max-width: 993px) {
-  h5 {
-    font-size: 1.25rem;
-  }
-
+  background-color: rgb(20, 20, 20);
 }

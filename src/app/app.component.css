@@ -1,0 +1,19 @@
+
+
+.nav,
+.main {
+  padding-left: 300px;
+}
+
+.nav{
+    display: block !important;
+}
+
+
+@media only screen and (max-width : 992px) {
+
+  .main,
+  .nav {
+    padding-left: 0;
+  }
+}

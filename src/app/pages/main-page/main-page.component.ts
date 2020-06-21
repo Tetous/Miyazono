@@ -2,6 +2,7 @@ import { NavigationExtras, Router } from '@angular/router';
 import { AnimeData } from './../../services/animeData.service';
 import { AnimeService } from './../../services/anime.service';
 import { Component, OnInit } from '@angular/core';
+import * as M from 'materialize-css';
 
 @Component({
   selector: 'main-page',
@@ -11,19 +12,25 @@ import { Component, OnInit } from '@angular/core';
 export class MainPage implements OnInit {
   episodes = []
   animes = []
+  servers = []
   episodesLoaded = false;
   animesLoaded = false;
+  modal
+  selectedEpisode
+  selectedAnimeId
+  selectedEpisodeId;
   states = {
     loading: 0,
     loaded: 1,
     error: 2
 
   }
+  serverState = this.states.loading
   currentEpisodeState = this.states.loading
   currentAnimeState = this.states.loading
 
   constructor(private animeService: AnimeService, private animeData: AnimeData, private router: Router) {
-
+    animeData.data = null
     if (animeData.latestAnimes == undefined) {
       this.getLatestAnimes();
     } else {
@@ -47,7 +54,7 @@ export class MainPage implements OnInit {
     let extras: NavigationExtras = {
       queryParams: {
         "animeName": anime.title,
-        "animeId": anime.id
+        "animeId": anime.id,
       }
     }
     this.router.navigate(["/anime"], extras)
@@ -74,14 +81,13 @@ export class MainPage implements OnInit {
     this.currentEpisodeState = this.states.loading
 
     this.animeService.getLatestEpisodes().subscribe((data) => {
-      console.log(data)
 
 
       this.episodes = data["episodes"]
       this.animeData.latestEpisodes = this.episodes
-      this.currentEpisodeState = this.animeData.latestEpisodes.length != 0 ?  this.states.loaded: this.states.error
+      this.currentEpisodeState = this.animeData.latestEpisodes.length != 0 ? this.states.loaded : this.states.error
 
-    },()=>{
+    }, () => {
       this.currentEpisodeState = this.states.error
 
     })
@@ -91,26 +97,87 @@ export class MainPage implements OnInit {
     this.currentAnimeState = this.states.loading
 
     this.animeService.getLatestAnimes().subscribe((data) => {
-      console.log(data)
 
       this.animes = data["animes"]
       this.animeData.latestAnimes = this.animes
-      this.currentAnimeState = this.animeData.latestAnimes.length != 0 ?  this.states.loaded: this.states.error
+      this.currentAnimeState = this.animeData.latestAnimes.length != 0 ? this.states.loaded : this.states.error
 
-    },()=>{
+    }, () => {
       this.currentAnimeState = this.states.error
 
     })
   }
 
-  scroll(element:HTMLElement,event){
+  scroll(element: HTMLElement, event) {
     let scrollValue = element.scrollLeft
-    let scrollAmount= event.deltaY <0 ? scrollValue+150: scrollValue-150
-    element.scroll({left:scrollAmount})
+    let scrollAmount = event.deltaY < 0 ? scrollValue + 150 : scrollValue - 150
+    element.scroll({ left: scrollAmount })
+  }
+
+  getAnimeId(episode) {
+    var elems = document.querySelector('.modal');
+    this.modal = M.Modal.init(elems);
+    this.serverState = this.states.loading
+    this.modal.open()
+
+    this.selectedEpisode = episode;
+
+    this.animeService.getSearchResult(episode.title).subscribe(results => {
+
+      let current = 0
+      while (results["search"][current].title != episode.title) {
+        current++;
+      }
+      this.selectedAnimeId = results["search"][current].id
+      let data = results["search"][current].episodes
+      this.selectedEpisodeId = data[data.length - Number.parseInt(episode.episode)].id
+
+      if (this.selectedEpisodeId == null) {
+        this.serverState = this.states.error
+
+        return
+      }
+
+      this.getServers(this.selectedEpisodeId)
+
+    }, () => {
+      this.serverState = this.states.error
+    })
+  }
+
+
+  getServers(id) {
+    this.animeService.getServers(id).subscribe(servers => {
+      this.serverState = this.states.loaded
+
+      this.servers = servers["servers"];
+    }, () => {
+      this.serverState = this.states.error
+    })
+  }
+
+
+  watchOption(serverCode) {
+    this.modal.close()
+    let extras: NavigationExtras = {
+      queryParams: {
+        "serverCode": serverCode,
+        "name":this.selectedEpisode.title,
+        "id":this.selectedAnimeId
+
+      }
+    }
+    this.router.navigate(["/watch"], extras)
+
+  }
+
+
+  ngAfterViewInit() {
+ 
   }
 
   ngOnInit(): void {
-    
+
   }
 
 }

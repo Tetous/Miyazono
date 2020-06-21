@@ -6,10 +6,11 @@
   position: relative;
   width: 100%;
   margin-top: 10px;
-  height: 300px;
+  height: 450px;
   object-fit: cover;
-  border-radius: 5%;
+  border-radius: 7px;
 }
+
 
 .collection-item {
   background-color: rgba(14, 13, 13, 0.274) !important;
@@ -20,22 +21,53 @@
 
 .collection {
   border: none;
-  height: 50vh;
+  height: 25vh;
   overflow-y: auto;
 }
 
-.loadingContainer{
-    position: relative;
-    width: 100%;
-    height: 200px;
+.loadingContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
 }
 
-.errorMessage{
+.errorMessage {
   display: flex;
   flex-direction: column;
- 
+
 }
-.errorMessage .btn{
+
+.animeInfo {
+  position: relative;
+  padding: 20px;
+
+}
+
+.synopsis {
+  font-size: 20px;
+  color: rgb(206, 206, 206);
+}
+
+#animeName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  white-space: nowrap;
+
+}
+
+.animeTitleMobile {
+  position: absolute;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  padding: 10px;
+  padding-bottom: 5px;
+  bottom: 0px;
+  white-space: nowrap;
+}
+
+.errorMessage .btn {
   position: relative;
   border-radius: 15px;
   width: 120px;
@@ -44,7 +76,7 @@
   margin-top: 10px;
 }
 
-.errorMessage i{
+.errorMessage i {
   position: relative;
   width: 60px;
   font-size: 2.5rem;
@@ -57,4 +89,79 @@
   color: #575757a1;
   border-radius: 50%;
   margin-bottom: 20px;
+}
+
+.mobileLayout {
+  display: none;
+  width: 100vw;
+}
+
+.waves-effect {
+  display: block;
+}
+
+.collection-item:hover,.server-option:hover {
+  background-color: #f48fb170 !important;
+}
+
+.server-container{
+  padding: 20px;
+  overflow: auto !important;
+  max-height: 300px;
+}
+
+.server-option-container{
+width: 100%;
+}
+.server-option {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  border-radius: 7px;
+  color: #c2c2c2;
+  background-color: #3b3b3b;
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+
+  .largePoster {
+    display: none !important;
+  }
+
+
+  .imagePoster {
+    object-position: 50% 35%;
+    border-radius: 0px;
+    margin-top: 0px;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(.75);
+  }
+
+  .mobileLayout {
+    display: block;
+  }
+
+  .desktopLayout {
+    display: none;
+  }
+
+  .mobilePoster {
+    position: relative;
+    box-shadow: 0px -10px 20px 20px rgba(0, 0, 0, 0.568) inset;
+    width: 100%;
+    height: 35vh;
+
+  }
+
+  .collection {
+    height: 45vh;
+  }
+
+  .collection-item {
+    font-size: 16px;
+    padding: 15px;
+  }
 }

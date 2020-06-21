@@ -8,7 +8,7 @@
     </div>
     <div *ngSwitchCase="states.loaded" class="content" #episodeCont (wheel)="scroll(episodeCont,$event)">
       <div class="imgContainer" *ngFor="let episode of episodes">
-        <a (click)="changeEpisodePage(episode)">
+        <a (click)="getAnimeId(episode)">
           <img class="z-depth-2" src="data:image/png;base64,{{episode.poster}}">
           <p>{{episode.title}}</p>
         </a>
@@ -49,4 +49,38 @@
       </div>
     </div>
   </div>
+</div>
+
+
+<div id="server-modal" class="modal">
+  <div class="modal-content">
+    <h4>Select an option</h4>
+    <div class="server-container" [ngSwitch]="serverState">
+      <div class="loaded " *ngSwitchCase="states.loaded">
+        <div class="server-option-container" *ngFor="let server of servers">
+          <a class="waves-effect waves-pink z-depth-0 btn server-option"
+            (click)="watchOption(server.code)">{{server.title}}</a>
+        </div>
+      </div>
+
+      <div class="loadingState" *ngSwitchCase="states.loading">
+        <div class=" loadingContainer">
+          <preloader ></preloader>
+        </div>
+      </div>
+
+      <div class="error" *ngSwitchCase="states.error">
+        <div class="row">
+          <div class="col s12 ">
+            <div class="errorMessage">
+              <i class="material-icons large">priority_high</i>
+              <a class="btn  pink lighten-3" (click)="getAnimeId(selectedEpisode)">Retry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>

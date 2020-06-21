@@ -20,7 +20,9 @@ export class NavbarComponent implements OnInit {
         } else {
           this.isMain = true
         }
+
       }
+
     })
   }
 
@@ -28,6 +30,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngAfterViewInit() {
+
     this.startSakura();
 
   }
@@ -42,7 +45,6 @@ export class NavbarComponent implements OnInit {
 
   public startSakura() {
 
-    let sakura = this.isMain ? new Sakura('.coloredDiv') : new Sakura('.coloredDivNav');
     var elems = document.querySelector('.sidenav');
     this.sidenav = M.Sidenav.init(elems);
     M.updateTextFields();

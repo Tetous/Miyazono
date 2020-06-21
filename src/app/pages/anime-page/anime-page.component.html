@@ -1,4 +1,33 @@
-<div class="container animeContainer">
+<div class="mobileLayout" [ngSwitch]="currentState">
+  <div *ngSwitchCase="states.loading">
+    <div class=" loadingContainer">
+      <preloader class="loading"></preloader>
+    </div>
+  </div>
+  <div class="loaded" *ngSwitchCase="states.loaded">
+
+    <div class="mobilePoster" id="imageContainer" *ngIf="currentState == states.loaded">
+      <img class="imagePoster" src="data:image/png;base64,{{animeInfo.poster}}">
+      <h4 class="animeTitleMobile">{{animeInfo.title}}</h4>
+    </div>
+    <div class="animeInfo">
+
+      <p class="synopsis">{{animeInfo.synopsis}}</p>
+      <ul class="collection" id="episodeContainer">
+        <a class="" *ngFor="let episode of animeInfo.episodes"
+          (click)="episode.episode != undefined ? getServers(episode.id) : null">
+          <li class="collection-item waves-effect waves-pink" [class.clickable]="episode.episode != undefined">
+            {{episode.episode != undefined ? "Episode " + episode.episode : episode.nextEpisodeDate != null ? "Next episode: "+episode.nextEpisodeDate : "Next episode: finished"}}
+          </li>
+        </a>
+      </ul>
+    </div>
+
+
+  </div>
+</div>
+
+<div class="container animeContainer desktopLayout">
   <div class="row" [ngSwitch]="currentState">
     <div *ngSwitchCase="states.loading">
       <div class="col s12" class="loadingContainer">
@@ -6,13 +35,11 @@
       </div>
     </div>
     <div class="loaded" *ngSwitchCase="states.loaded">
-      <div class="col s12 m4 xl3" id="imageContainer">
-        <img class="z-depth-2 imagePoster" src="data:image/png;base64,{{animeInfo.poster}}">
-      </div>
-      <div class="col s12 m8 xl9">
+
+      <div class="col s12 m12 l12 xl8">
         <div class="card">
           <div class="card-content">
-            <h5 id="animeName">{{animeInfo.title}}</h5>
+            <h4 id="animeName">{{animeInfo.title}}</h4>
           </div>
         </div>
         <div class="card">
@@ -21,12 +48,16 @@
           </div>
         </div>
         <ul class="collection" id="episodeContainer">
-          <a *ngFor="let episode of animeInfo.episodes" (click)="changeEpisodePage(episode)">
-            <li class="collection-item clickable">
+          <a *ngFor="let episode of animeInfo.episodes"
+            (click)="episode.episode != undefined ? getServers(episode.id) : null">
+            <li class="collection-item waves-effect waves-pink" [class.clickable]="episode.episode != undefined">
               {{episode.episode != undefined ? "Episode " + episode.episode : episode.nextEpisodeDate != null ? "Next episode: "+episode.nextEpisodeDate : "Next episode: finished"}}
             </li>
           </a>
         </ul>
+      </div>
+      <div class="col l12 xl4 " id="imageContainer">
+        <img class="z-depth-2 imagePoster largePoster" src="data:image/png;base64,{{animeInfo.poster}}">
       </div>
     </div>
     <div *ngSwitchCase="states.error">
@@ -44,4 +75,37 @@
       </div>
     </div>
   </div>
+</div>
+
+<div id="server-modal" class="modal">
+  <div class="modal-content">
+    <h4>Select an option</h4>
+    <div class="server-container" [ngSwitch]="serverState">
+      <div class="loaded " *ngSwitchCase="states.loaded">
+        <div class="server-option-container" *ngFor="let server of servers">
+          <a class="waves-effect waves-pink z-depth-0 btn server-option"
+            (click)="watchOption(server.code)">{{server.title}}</a>
+        </div>
+      </div>
+
+      <div class="loading" *ngSwitchCase="states.loading">
+        <div class=" loadingContainer">
+          <preloader class="loading"></preloader>
+        </div>
+      </div>
+
+      <div class="error" *ngSwitchCase="states.error">
+        <div class="row">
+          <div class="col s12 ">
+            <div class="errorMessage">
+              <i class="material-icons large">priority_high</i>
+              <a class="btn  pink lighten-3" (click)="getEpisodes()">Retry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>

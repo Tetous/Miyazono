@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'miyazono';
+  watchPage = false;
+  constructor(private router: Router) {
+    router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        let route = val.url.split("?").shift();
+        if (route == '/watch') {
+          this.watchPage = true
+        } else {
+          this.watchPage = false
+        }
+
+      }
+
+    })
+  }
 }
