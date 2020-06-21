@@ -1,7 +1,7 @@
 {
   "name": "Miyazono",
   "short_name": "Miyazono",
-  "theme_color": "#1976d2",
+  "theme_color": "#191919",
   "background_color": "#191919",
   "display": "standalone",
   "scope": "./",

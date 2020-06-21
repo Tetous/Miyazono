@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1592706148800,
+  "timestamp": 1592712221974,
   "index": "https://fmaldonado6.github.io/Miyazono/index.html",
   "assetGroups": [
     {
@@ -55,7 +55,7 @@
     "https://fmaldonado6.github.io/Miyazono/index.html": "d969a90c3bd5ba6579aa9ac99169a6f4b6a40a6f",
     "https://fmaldonado6.github.io/Miyazono/main-es2015.6288a52f7b5fef25a3de.js": "23efc98a4c688dd8896fc897a4eb5355e4edb1b1",
     "https://fmaldonado6.github.io/Miyazono/main-es5.6288a52f7b5fef25a3de.js": "e2821f03daecd891015926191cf021d7ea3319f9",
-    "https://fmaldonado6.github.io/Miyazono/manifest.webmanifest": "edd8bebf7a294aa797ef936fc8d8e73137a264d2",
+    "https://fmaldonado6.github.io/Miyazono/manifest.webmanifest": "94280b4945578990cdc0d0a34485be33e6049522",
     "https://fmaldonado6.github.io/Miyazono/polyfills-es2015.1f913f16a2d346cc8bdc.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "https://fmaldonado6.github.io/Miyazono/polyfills-es5.1a3c78b07cd6f16c6e9a.js": "87006d1f609b94ee122cc7790b1ddb5e03d8eaa6",
     "https://fmaldonado6.github.io/Miyazono/runtime-es2015.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
