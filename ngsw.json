@@ -1,0 +1,84 @@
+{
+  "configVersion": 1,
+  "timestamp": 1592700114295,
+  "index": "https://fmaldonado6.github.io/Miyazono/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://fmaldonado6.github.io/Miyazono/favicon.ico",
+        "https://fmaldonado6.github.io/Miyazono/index.html",
+        "https://fmaldonado6.github.io/Miyazono/main-es2015.4cc73c2aa1ed3fe30e4c.js",
+        "https://fmaldonado6.github.io/Miyazono/main-es5.4cc73c2aa1ed3fe30e4c.js",
+        "https://fmaldonado6.github.io/Miyazono/manifest.webmanifest",
+        "https://fmaldonado6.github.io/Miyazono/polyfills-es2015.1f913f16a2d346cc8bdc.js",
+        "https://fmaldonado6.github.io/Miyazono/polyfills-es5.1a3c78b07cd6f16c6e9a.js",
+        "https://fmaldonado6.github.io/Miyazono/runtime-es2015.0811dcefd377500b5b1a.js",
+        "https://fmaldonado6.github.io/Miyazono/runtime-es5.0811dcefd377500b5b1a.js",
+        "https://fmaldonado6.github.io/Miyazono/scripts.bfd84331b048c08a0126.js",
+        "https://fmaldonado6.github.io/Miyazono/styles.404907dad5cde19f5e5c.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://fmaldonado6.github.io/Miyazono/assets/icon/miyazono.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-128x128.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-144x144.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-152x152.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-192x192.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-384x384.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-512x512.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-72x72.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://fmaldonado6.github.io/Miyazono/assets/icon/miyazono.png": "f093fb9e872cc08bd50defd8ff44b3ee2df07767",
+    "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-128x128.png": "77f8ea2e63a3ca8c27102c12757be4aee296423a",
+    "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-144x144.png": "57f62ee1b32b9001aec1dc40b6247eae1b130982",
+    "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-152x152.png": "aef7e129c0f1dd86bf14e33d852b3a412dff9de2",
+    "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-192x192.png": "5d9164d0180360a8607336dfa6f679bd9a1929de",
+    "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-384x384.png": "ab08d12ce1e1e71ce61401dc3b2f83e2dd9e32f7",
+    "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-512x512.png": "2498e14fdf99e9e47bde6de687d642edfc85b8bc",
+    "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-72x72.png": "bf3118fcc3834122104f94358f9d1ec3597946bc",
+    "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-96x96.png": "d53f43e6d6e92b0dd4eebacee6aacb1a3a068cce",
+    "https://fmaldonado6.github.io/Miyazono/favicon.ico": "805790e7e9d2a1a078f5f67d310da8f14215136b",
+    "https://fmaldonado6.github.io/Miyazono/index.html": "63cd4290060a659b562b9a773cab0714eab098d4",
+    "https://fmaldonado6.github.io/Miyazono/main-es2015.4cc73c2aa1ed3fe30e4c.js": "e966c1647ad2239c20aecb47783de8db874e0b7a",
+    "https://fmaldonado6.github.io/Miyazono/main-es5.4cc73c2aa1ed3fe30e4c.js": "923d0e8389b430aa3ea168738fb8748607c097a4",
+    "https://fmaldonado6.github.io/Miyazono/manifest.webmanifest": "edd8bebf7a294aa797ef936fc8d8e73137a264d2",
+    "https://fmaldonado6.github.io/Miyazono/polyfills-es2015.1f913f16a2d346cc8bdc.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
+    "https://fmaldonado6.github.io/Miyazono/polyfills-es5.1a3c78b07cd6f16c6e9a.js": "87006d1f609b94ee122cc7790b1ddb5e03d8eaa6",
+    "https://fmaldonado6.github.io/Miyazono/runtime-es2015.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "https://fmaldonado6.github.io/Miyazono/runtime-es5.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "https://fmaldonado6.github.io/Miyazono/scripts.bfd84331b048c08a0126.js": "d2ba08145c6ddbbe63efd331be6c8360db0c5f86",
+    "https://fmaldonado6.github.io/Miyazono/styles.404907dad5cde19f5e5c.css": "833902df8f296e9b92d67375b4f3d827e92d4e2d"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
