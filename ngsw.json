@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1592799573332,
+  "timestamp": 1592856346066,
   "index": "https://fmaldonado6.github.io/Miyazono/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "https://fmaldonado6.github.io/Miyazono/favicon.ico",
         "https://fmaldonado6.github.io/Miyazono/index.html",
-        "https://fmaldonado6.github.io/Miyazono/main-es2015.863df8a9cac02b1122eb.js",
-        "https://fmaldonado6.github.io/Miyazono/main-es5.863df8a9cac02b1122eb.js",
+        "https://fmaldonado6.github.io/Miyazono/main-es2015.d70bdf98fdf94c732c94.js",
+        "https://fmaldonado6.github.io/Miyazono/main-es5.d70bdf98fdf94c732c94.js",
         "https://fmaldonado6.github.io/Miyazono/manifest.webmanifest",
         "https://fmaldonado6.github.io/Miyazono/polyfills-es2015.1f913f16a2d346cc8bdc.js",
         "https://fmaldonado6.github.io/Miyazono/polyfills-es5.1a3c78b07cd6f16c6e9a.js",
@@ -76,9 +76,9 @@
     "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/iphonexr_splash.png": "04fbc1a0b16e17875f1d03ece2ea271874fdfee4",
     "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/iphonexsmax_splash.png": "50c2e61175ca235a069b157b0532de350d774703",
     "https://fmaldonado6.github.io/Miyazono/favicon.ico": "73fabeaa47eddf5c648b08050746dbe2259c5658",
-    "https://fmaldonado6.github.io/Miyazono/index.html": "64517d6a0eb89a7da67c9ac7b537ae802c8dd499",
-    "https://fmaldonado6.github.io/Miyazono/main-es2015.863df8a9cac02b1122eb.js": "0a650145728969f8b9aa19329ab409479c17d6f1",
-    "https://fmaldonado6.github.io/Miyazono/main-es5.863df8a9cac02b1122eb.js": "7c9cb2ac859177ac5c5ca2597b16a8344b357517",
+    "https://fmaldonado6.github.io/Miyazono/index.html": "49d5d9155d45ae12979b6981405235ea04b43750",
+    "https://fmaldonado6.github.io/Miyazono/main-es2015.d70bdf98fdf94c732c94.js": "e20ba48cb86468778d8d41f5537703efd850e903",
+    "https://fmaldonado6.github.io/Miyazono/main-es5.d70bdf98fdf94c732c94.js": "f8e07fea927db08c0c8270ff2b14f581e9203ec0",
     "https://fmaldonado6.github.io/Miyazono/manifest.webmanifest": "ef1e709fabe9cf84224a6a328f8c2e50ba55f852",
     "https://fmaldonado6.github.io/Miyazono/polyfills-es2015.1f913f16a2d346cc8bdc.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "https://fmaldonado6.github.io/Miyazono/polyfills-es5.1a3c78b07cd6f16c6e9a.js": "87006d1f609b94ee122cc7790b1ddb5e03d8eaa6",
