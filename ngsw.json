@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1592712447852,
+  "timestamp": 1592799573332,
   "index": "https://fmaldonado6.github.io/Miyazono/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "https://fmaldonado6.github.io/Miyazono/favicon.ico",
         "https://fmaldonado6.github.io/Miyazono/index.html",
-        "https://fmaldonado6.github.io/Miyazono/main-es2015.6288a52f7b5fef25a3de.js",
-        "https://fmaldonado6.github.io/Miyazono/main-es5.6288a52f7b5fef25a3de.js",
+        "https://fmaldonado6.github.io/Miyazono/main-es2015.863df8a9cac02b1122eb.js",
+        "https://fmaldonado6.github.io/Miyazono/main-es5.863df8a9cac02b1122eb.js",
         "https://fmaldonado6.github.io/Miyazono/manifest.webmanifest",
         "https://fmaldonado6.github.io/Miyazono/polyfills-es2015.1f913f16a2d346cc8bdc.js",
         "https://fmaldonado6.github.io/Miyazono/polyfills-es5.1a3c78b07cd6f16c6e9a.js",
@@ -28,6 +28,7 @@
       "updateMode": "prefetch",
       "urls": [
         "https://fmaldonado6.github.io/Miyazono/assets/icon/miyazono.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/icon/miyazono_icon.png",
         "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-128x128.png",
         "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-144x144.png",
         "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-152x152.png",
@@ -36,7 +37,17 @@
         "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-512x512.png",
         "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-72x72.png",
         "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-96x96.png",
-        "https://fmaldonado6.github.io/Miyazono/assets/icons/miyazono_icon.png"
+        "https://fmaldonado6.github.io/Miyazono/assets/icons/miyazono_icon.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/ipad_splash.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/ipadpro1_splash.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/ipadpro2_splash.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/ipadpro3_splash.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/iphone5_splash.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/iphone6_splash.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/iphoneplus_splash.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/iphonex_splash.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/iphonexr_splash.png",
+        "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/iphonexsmax_splash.png"
       ],
       "patterns": []
     }
@@ -44,6 +55,7 @@
   "dataGroups": [],
   "hashTable": {
     "https://fmaldonado6.github.io/Miyazono/assets/icon/miyazono.png": "f093fb9e872cc08bd50defd8ff44b3ee2df07767",
+    "https://fmaldonado6.github.io/Miyazono/assets/icon/miyazono_icon.png": "117796a2f2c074617e8d13ceeb35aa149c8407ae",
     "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-128x128.png": "77f8ea2e63a3ca8c27102c12757be4aee296423a",
     "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-144x144.png": "57f62ee1b32b9001aec1dc40b6247eae1b130982",
     "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-152x152.png": "aef7e129c0f1dd86bf14e33d852b3a412dff9de2",
@@ -53,10 +65,20 @@
     "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-72x72.png": "bf3118fcc3834122104f94358f9d1ec3597946bc",
     "https://fmaldonado6.github.io/Miyazono/assets/icons/icon-96x96.png": "d53f43e6d6e92b0dd4eebacee6aacb1a3a068cce",
     "https://fmaldonado6.github.io/Miyazono/assets/icons/miyazono_icon.png": "117796a2f2c074617e8d13ceeb35aa149c8407ae",
+    "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/ipad_splash.png": "09062de055189ccc02936c15f5a320040cf1940a",
+    "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/ipadpro1_splash.png": "0801ddbd928ea053220131f654b63ae796582a80",
+    "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/ipadpro2_splash.png": "1e96b43e00dcd1682c86e269ce2da2f16c5eace5",
+    "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/ipadpro3_splash.png": "51c13ea7a27be44aad714551521553862a1445ae",
+    "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/iphone5_splash.png": "09b4ea8030f0ae06e688f1ab0fc2338b6de07de8",
+    "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/iphone6_splash.png": "612668bec4a8c495ecb1bfdd9f850dd55b5d2e21",
+    "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/iphoneplus_splash.png": "3a784e5aa27763012a61803e11776c99e3c18214",
+    "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/iphonex_splash.png": "69db52c7cd706dc1ee0fe061bee3e6db24041049",
+    "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/iphonexr_splash.png": "04fbc1a0b16e17875f1d03ece2ea271874fdfee4",
+    "https://fmaldonado6.github.io/Miyazono/assets/splashscreens/iphonexsmax_splash.png": "50c2e61175ca235a069b157b0532de350d774703",
     "https://fmaldonado6.github.io/Miyazono/favicon.ico": "73fabeaa47eddf5c648b08050746dbe2259c5658",
-    "https://fmaldonado6.github.io/Miyazono/index.html": "d969a90c3bd5ba6579aa9ac99169a6f4b6a40a6f",
-    "https://fmaldonado6.github.io/Miyazono/main-es2015.6288a52f7b5fef25a3de.js": "23efc98a4c688dd8896fc897a4eb5355e4edb1b1",
-    "https://fmaldonado6.github.io/Miyazono/main-es5.6288a52f7b5fef25a3de.js": "e2821f03daecd891015926191cf021d7ea3319f9",
+    "https://fmaldonado6.github.io/Miyazono/index.html": "64517d6a0eb89a7da67c9ac7b537ae802c8dd499",
+    "https://fmaldonado6.github.io/Miyazono/main-es2015.863df8a9cac02b1122eb.js": "0a650145728969f8b9aa19329ab409479c17d6f1",
+    "https://fmaldonado6.github.io/Miyazono/main-es5.863df8a9cac02b1122eb.js": "7c9cb2ac859177ac5c5ca2597b16a8344b357517",
     "https://fmaldonado6.github.io/Miyazono/manifest.webmanifest": "ef1e709fabe9cf84224a6a328f8c2e50ba55f852",
     "https://fmaldonado6.github.io/Miyazono/polyfills-es2015.1f913f16a2d346cc8bdc.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "https://fmaldonado6.github.io/Miyazono/polyfills-es5.1a3c78b07cd6f16c6e9a.js": "87006d1f609b94ee122cc7790b1ddb5e03d8eaa6",
