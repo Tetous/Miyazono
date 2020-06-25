@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "deploy":"ng deploy --base-href=https://fmaldonado6.github.io/Miyazono/",
+    "deploy": "ng deploy --base-href=https://fmaldonado6.github.io/Miyazono/",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -24,6 +24,7 @@
     "@angular/platform-browser": "~9.0.2",
     "@angular/platform-browser-dynamic": "~9.0.2",
     "@angular/router": "~9.0.2",
+    "@angular/service-worker": "~9.0.2",
     "materialize-css": "^1.0.0-rc.2",
     "rxjs": "~6.5.4",
     "sakura-js": "^1.1.1",

@@ -70,6 +70,9 @@ export class MoreContentPage implements OnInit {
 
     this.animeService.getTv("default", 1).subscribe(shows => {
       this.tvShows = shows["tv"]
+      for(let anime of this.tvShows){
+        anime.poster = this.getCorrectImage(anime.poster)
+      }
       this.animeData.latestAnimes = this.tvShows
       this.currentState.tvShowsState = this.states.loaded
     }, () => {
@@ -84,6 +87,9 @@ export class MoreContentPage implements OnInit {
 
     this.animeService.getMovies("default", 1).subscribe(movies => {
       this.movies = movies["movies"]
+      for(let anime of this.movies){
+        anime.poster = this.getCorrectImage(anime.poster)
+      }
       this.animeData.latestMovies = this.movies
       this.currentState.movieState = this.states.loaded
     }, () => {
@@ -98,6 +104,9 @@ export class MoreContentPage implements OnInit {
 
     this.animeService.getOva("default", 1).subscribe(ovas => {
       this.ovas = ovas["ova"]
+      for(let anime of this.ovas){
+        anime.poster = this.getCorrectImage(anime.poster)
+      }
       this.animeData.latestOvas = this.ovas
 
       this.currentState.ovaState = this.states.loaded
@@ -113,6 +122,9 @@ export class MoreContentPage implements OnInit {
 
     this.animeService.getSpecial("default", 1).subscribe(specials => {
       this.specials = specials["special"]
+      for(let anime of this.specials){
+        anime.poster = this.getCorrectImage(anime.poster)
+      }
       this.animeData.latestSpecials = this.specials
       this.currentState.specialsState = this.states.loaded
     }, () => {
@@ -120,6 +132,15 @@ export class MoreContentPage implements OnInit {
 
     })
 
+  }
+
+  getCorrectImage(base64:string){
+
+    while(base64.length % 4 >0){
+      base64+='='
+    }
+
+    return base64
   }
 
   scroll(element: HTMLElement, event) {

@@ -16,6 +16,8 @@ import { SearchPage } from './pages/search-page/search-page.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { MoreContentPage } from './pages/morecontent-page/morecontent-page.component';
 import { AboutPage } from './pages/about-page/about-page.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { AboutPage } from './pages/about-page/about-page.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     AnimeService,

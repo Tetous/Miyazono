@@ -15,7 +15,7 @@
   <div class="content" *ngSwitchCase="states.loaded"  #showsDiv (wheel)="scroll(showsDiv,$event)">
     <div class="imgContainer" *ngFor="let tvShow of tvShows">
       <a (click)="changeAnimePage(tvShow)">
-        <img class="z-depth-2" src="data:image/png;base64,{{tvShow.poster}}">
+        <img class="z-depth-2" crossorigin="anonymous" src="data:image/png;base64,{{tvShow.poster}}">
         <p>{{tvShow.title}}</p>
       </a>
     </div>
@@ -38,7 +38,7 @@
   <div class="content" *ngSwitchCase="states.loaded" #moviesDiv (wheel)="scroll(moviesDiv,$event)">
     <div class="imgContainer" *ngFor="let movie of movies">
       <a (click)="changeAnimePage(movie)">
-        <img class="z-depth-2" src="data:image/png;base64,{{movie.poster}}">
+        <img class="z-depth-2" crossorigin="anonymous" src="data:image/png;base64,{{movie.poster}}">
         <p>{{movie.title}}</p>
       </a>
     </div>
@@ -61,7 +61,7 @@
   <div class="content" *ngSwitchCase="states.loaded" #ovasDiv (wheel)="scroll(ovasDiv,$event)">
     <div class="imgContainer" *ngFor="let ova of ovas">
       <a (click)="changeAnimePage(ova)">
-        <img class="z-depth-2" src="data:image/png;base64,{{ova.poster}}">
+        <img class="z-depth-2" crossorigin="anonymous" src="data:image/png;base64,{{ova.poster}}">
         <p>{{ova.title}}</p>
       </a>
     </div>
@@ -84,7 +84,7 @@
   <div class="content" *ngSwitchCase="states.loaded" #specialsDiv (wheel)="scroll(specialsDiv,$event)">
     <div class="imgContainer" *ngFor="let special of specials">
       <a (click)="changeAnimePage(special)">
-        <img class="z-depth-2" src="data:image/png;base64,{{special.poster}}">
+        <img class="z-depth-2" crossorigin="anonymous" src="data:image/png;base64,{{special.poster}}">
         <p>{{special.title}}</p>
       </a>
     </div>

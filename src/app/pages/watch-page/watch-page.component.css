@@ -10,14 +10,14 @@
   z-index: 10;
   position: absolute;
   margin: 20px;
-  font-size: 50px;
+  font-size: 3rem;
 }
 
 .video-container {
+  padding: 1px;
   width: 100vw; 
-  height: 56.25vw; /* height:width ratio = 9/16 = .5625  */
-  background: pink;
-  max-height: 100vh;
+  height: 56vw; /* height:width ratio = 9/16 = .5625  */
+  max-height: 90vh;
   max-width: 177.78vh; /* 16/9 = 1.778 */
   margin: auto;
   position: absolute;
@@ -25,12 +25,18 @@
   left:0;right:0;
 }
 
+
 iframe {
   position: absolute;
-  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border: none;
   background-color: rgb(20, 20, 20);
+}
+@media only screen and (max-width: 1200px) {
+  .back-btn{
+    margin: 10px;
+    font-size: 2rem;
+  }
 }

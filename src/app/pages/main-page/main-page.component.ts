@@ -84,6 +84,9 @@ export class MainPage implements OnInit {
 
 
       this.episodes = data["episodes"]
+      for (let anime of this.episodes) {
+        anime.poster = this.getCorrectImage(anime.poster)
+      }
       this.animeData.latestEpisodes = this.episodes
       this.currentEpisodeState = this.animeData.latestEpisodes.length != 0 ? this.states.loaded : this.states.error
 
@@ -99,6 +102,9 @@ export class MainPage implements OnInit {
     this.animeService.getLatestAnimes().subscribe((data) => {
 
       this.animes = data["animes"]
+      for (let anime of this.animes) {
+        anime.poster = this.getCorrectImage(anime.poster)
+      }
       this.animeData.latestAnimes = this.animes
       this.currentAnimeState = this.animeData.latestAnimes.length != 0 ? this.states.loaded : this.states.error
 
@@ -145,6 +151,14 @@ export class MainPage implements OnInit {
     })
   }
 
+  getCorrectImage(base64: string) {
+
+    while (base64.length % 4 > 0) {
+      base64 += '='
+    }
+
+    return base64
+  }
 
   getServers(id) {
     this.animeService.getServers(id).subscribe(servers => {
@@ -162,8 +176,8 @@ export class MainPage implements OnInit {
     let extras: NavigationExtras = {
       queryParams: {
         "serverCode": serverCode,
-        "name":this.selectedEpisode.title,
-        "id":this.selectedAnimeId
+        "name": this.selectedEpisode.title,
+        "id": this.selectedAnimeId
 
       }
     }
@@ -173,7 +187,7 @@ export class MainPage implements OnInit {
 
 
   ngAfterViewInit() {
- 
+
   }
 
   ngOnInit(): void {

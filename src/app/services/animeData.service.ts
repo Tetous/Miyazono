@@ -7,6 +7,8 @@ export class AnimeData{
     public latestMovies
     public latestSpecials
     public latestEpisodes
+    public searchData
+    public searchQuery
     public data;
     public episodeData;
 

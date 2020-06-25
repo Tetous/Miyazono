@@ -1,8 +1,10 @@
 {
     "/api/*":{
-        "target":"https://animeflv.chrismichael.now.sh",
-        "secure":true,
-        "changeOrigin":true,
-        "logLevel":"debug"
-    }
+        "target": "https://miyazonorest.herokuapp.com/api/v1",
+        "secure": true,
+        "pathRewrite": {
+        "^/posts": ""
+      },
+        "changeOrigin": true
+      }
 }

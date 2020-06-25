@@ -8,9 +8,16 @@
     <div class="content" *ngSwitchCase="states.loaded" #searchCont (wheel)="scroll(searchCont,$event)">
       <div class="imgContainer" *ngFor="let result of searchResults" >
         <a (click)="changeAnimePage(result)">
-          <img class="z-depth-2" src="data:image/png;base64,{{result.poster}}">
+          <img class="z-depth-2" crossorigin="anonymous" src="data:image/png;base64,{{result.poster}}">
           <p>{{result.title}}</p>
         </a>
+      </div>
+    </div>
+    <div *ngSwitchCase="states.empty">
+      <div class="errorMessage">
+
+        <i class="material-icons large">help</i>
+        <span class="grey-text">No results for your search</span>
       </div>
     </div>
     <div *ngSwitchCase="states.error">

@@ -9,7 +9,7 @@
     <div *ngSwitchCase="states.loaded" class="content" #episodeCont (wheel)="scroll(episodeCont,$event)">
       <div class="imgContainer" *ngFor="let episode of episodes">
         <a (click)="getAnimeId(episode)">
-          <img class="z-depth-2" src="data:image/png;base64,{{episode.poster}}">
+          <img class="z-depth-2" crossorigin="anonymous" src="data:image/png;base64,{{episode.poster}}">
           <p>{{episode.title}}</p>
         </a>
       </div>
@@ -35,7 +35,7 @@
 
       <div class="imgContainer" *ngFor="let anime of animes">
         <a (click)="changeAnimePage(anime)">
-          <img class="z-depth-2" src="data:image/png;base64,{{anime.poster}}">
+          <img class="z-depth-2" crossorigin="anonymous" src="data:image/png;base64,{{anime.poster}}">
           <p>{{anime.title}}</p>
         </a>
       </div>
@@ -58,7 +58,7 @@
     <div class="server-container" [ngSwitch]="serverState">
       <div class="loaded " *ngSwitchCase="states.loaded">
         <div class="server-option-container" *ngFor="let server of servers">
-          <a class="waves-effect waves-pink z-depth-0 btn server-option"
+          <a class="z-depth-0 btn server-option"
             (click)="watchOption(server.code)">{{server.title}}</a>
         </div>
       </div>

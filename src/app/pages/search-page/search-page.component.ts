@@ -13,16 +13,13 @@ export class SearchPage implements OnInit {
   states = {
     loading: 0,
     loaded: 1,
-    error: 2
+    empty: 2,
+    error: 3
 
   }
   search
   currentState = this.states.loading
-  constructor(private animeService: AnimeService, private route: ActivatedRoute, private router: Router, private animeData: AnimeData) {
-
-
-
-  }
+  constructor(private animeService: AnimeService, private route: ActivatedRoute, private router: Router, private animeData: AnimeData) { }
   scroll(element: HTMLElement, event) {
     event.preventDefault()
     let scrollValue = element.scrollLeft
@@ -32,7 +29,20 @@ export class SearchPage implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.search = params.search
-      this.searchAnime()
+
+      if (this.animeData.searchData != null && this.search == this.animeData.searchQuery) {
+        
+        if(this.animeData.searchData.length == 0){
+          this.currentState = this.states.empty
+          return;
+        }
+        
+        this.searchResults = this.animeData.searchData
+
+        this.currentState = this.states.loaded
+      } else {
+        this.searchAnime()
+      }
     })
   }
 
@@ -41,14 +51,25 @@ export class SearchPage implements OnInit {
     this.animeService.getSearchResult(this.search).subscribe(results => {
 
       this.searchResults = []
-      
+
 
       this.searchResults = results["search"]
-      
+
       if (this.searchResults == null)
         this.searchResults = []
 
-      this.currentState = this.searchResults.length != 0 ? this.states.loaded : this.states.error
+      this.animeData.searchQuery = this.search;
+      this.animeData.searchData = this.searchResults;
+
+      if (this.searchResults.length == 0) {
+        this.currentState = this.states.empty
+      } else {
+        this.currentState = this.states.loaded
+
+      }
+
+    },()=>{
+      this.currentState = this.states.error
     })
   }
 

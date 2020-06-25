@@ -16,7 +16,7 @@
       <ul class="collection" id="episodeContainer">
         <a class="" *ngFor="let episode of animeInfo.episodes"
           (click)="episode.episode != undefined ? getServers(episode.id) : null">
-          <li class="collection-item waves-effect waves-pink" [class.clickable]="episode.episode != undefined">
+          <li class="collection-item" [class.clickable]="episode.episode != undefined">
             {{episode.episode != undefined ? "Episode " + episode.episode : episode.nextEpisodeDate != null ? "Next episode: "+episode.nextEpisodeDate : "Next episode: finished"}}
           </li>
         </a>
@@ -50,7 +50,7 @@
         <ul class="collection" id="episodeContainer">
           <a *ngFor="let episode of animeInfo.episodes"
             (click)="episode.episode != undefined ? getServers(episode.id) : null">
-            <li class="collection-item waves-effect waves-pink" [class.clickable]="episode.episode != undefined">
+            <li class="collection-item " [class.clickable]="episode.episode != undefined">
               {{episode.episode != undefined ? "Episode " + episode.episode : episode.nextEpisodeDate != null ? "Next episode: "+episode.nextEpisodeDate : "Next episode: finished"}}
             </li>
           </a>
@@ -83,7 +83,7 @@
     <div class="server-container" [ngSwitch]="serverState">
       <div class="loaded " *ngSwitchCase="states.loaded">
         <div class="server-option-container" *ngFor="let server of servers">
-          <a class="waves-effect waves-pink z-depth-0 btn server-option"
+          <a class=" z-depth-0 btn server-option"
             (click)="watchOption(server.code)">{{server.title}}</a>
         </div>
       </div>
