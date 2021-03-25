@@ -1,6 +1,6 @@
 {
     "/api/*":{
-        "target": "https://miyazonorest.herokuapp.com/api/v1",
+        "target": "https://animeflv-pi.vercel.app/api/v1",
         "secure": true,
         "pathRewrite": {
         "^/posts": ""
